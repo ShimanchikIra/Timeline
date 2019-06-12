@@ -3,7 +3,7 @@
     background: linear-gradient(to top left, purple, #7B68EE);
     font-family: 'Titillium Web', sans-serif;
     font-weight: bold;
-    margin: 0 auto;
+    margin: 100px auto;
     color: #fff;
     padding: 35px;
     font-size: 18px;
@@ -62,7 +62,7 @@
     background-color: transparent;
     letter-spacing: 0;
     position: absolute;
-    right: 30px;
+    left: -100px;
 }
 .item_wait{
     opacity: 0.5;
@@ -74,7 +74,7 @@
     border: 1px solid;
 }
 .item_process:before{
-    border: 1px solid;
+    border: 1px solid #fff;
     background-image: url("mini_circle.png");
     background-repeat: no-repeat;
     background-position: 50% 50%;
@@ -84,18 +84,20 @@
     display: block;
     position: absolute;
     width: 1px;
-    height: 50%;
+    height: 46%;
     background-color: transparent;
     border-right: 1px dashed #fff;
-    top: 30px;
-    right: 46px;
-    z-index: 1;
+    top: 32px;
+    left: -86px;
 }
 .item:last-child:after{
-    display: none;
+    content: none;
 }
 .item_done:after{
     border-right: 1px solid #fff;
+}
+.item:nth-child(odd):before, .item:nth-child(odd):after{
+    content: none;
 }
 @media screen and (max-width: 768px){
      .item{
@@ -103,5 +105,16 @@
      }
     .item:last-child{
         padding-bottom: 0;
+    }
+    .item:nth-child(odd):before, .item:nth-child(odd):after{
+        content: '';
+    }
+    .item:before{
+        left: auto;
+        right: 30px;
+    }
+    .item:after{
+        left: auto;
+        right: 46px;
     }
 }
