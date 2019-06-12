@@ -1,0 +1,59 @@
+.page{
+    width: 70%;
+    background: linear-gradient(to top left, purple, #7B68EE);
+    font-family: 'Titillium Web', sans-serif;
+    font-weight: bold;
+    margin: 0 auto;
+    color: #fff;
+    padding: 35px;
+    font-size: 18px;
+}
+.wrap{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+.item {
+    width:49.5%;
+    position: relative;
+    list-style-type: none;
+    padding-bottom: 30px ;
+}
+.item__checkbox {
+    visibility: hidden;
+}
+.item__checkbox + label {
+    padding-left: 30px;
+    cursor: pointer;
+}
+.item__checkbox + label:before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: transparent url("watch.png") no-repeat 50% 50%;
+    transition: .2s;
+}
+.item__checkbox_spin + label:before {
+    background: transparent url("re-fresh.png") no-repeat 40% 50%;
+    animation: spin 2s linear infinite;
+    transition: none;
+}
+@keyframes spin {
+    from { transform: rotate(0deg);}
+    to { transform: rotate(360deg);}
+}
+.item__checkbox:checked + label:before {
+    background: transparent url("done.png") no-repeat 50% 50%;
+    animation: none;
+}
+@media screen and (max-width: 768px){
+     .item{
+         width: 100%;
+     }
+}
