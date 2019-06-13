@@ -70,14 +70,14 @@
 .item_process{
     color: #FFFF00;
 }
-.item_done:before{
-    border: 1px solid;
-}
 .item_process:before{
     border: 1px solid #fff;
     background-image: url("mini_circle.png");
     background-repeat: no-repeat;
     background-position: 50% 50%;
+}
+.item_done:before{
+    border: 1px solid;
 }
 .item:after {
     content: '';
