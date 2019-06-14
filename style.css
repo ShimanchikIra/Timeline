@@ -3,7 +3,7 @@
     background: linear-gradient(to top left, purple, #7B68EE);
     font-family: 'Titillium Web', sans-serif;
     font-weight: bold;
-    margin: 100px auto;
+    margin:  auto;
     color: #fff;
     padding: 35px;
     font-size: 18px;
@@ -17,30 +17,31 @@
 }
 .item {
     width:45%;
-    position: relative;
-    list-style-type: none;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
     padding-bottom: 30px ;
+    position: relative;
 }
-.item__checkbox {
-    visibility: hidden;
+.item_wait{
+    opacity: 0.5;
 }
-.item__checkbox + label {
-    padding-left: 30px;
-    cursor: pointer;
+.item_process{
+    color: #FFFF00;
 }
-.item__checkbox + label:before {
-    content: '';
-    position: absolute;
-    top: -5px;
-    left: 0;
-    width: 40px;
-    height: 40px;
+.item__img{
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
-    background: transparent url("watch.png") no-repeat 50% 50%;
-    transition: .2s;
 }
-.item__checkbox_spin + label:before {
-    background: transparent url("re-fresh.png") no-repeat 40% 50%;
+.item__img_wait{
+    background: transparent url("img/watch.png") no-repeat 50% 50%;
+}
+.item__img_done{
+    background: transparent url("img/done.png") no-repeat 50% 50%;
+}
+.item__img_process{
+    background: transparent url("img/re-fresh.png") no-repeat 40% 50%;
     animation: spin 2s linear infinite;
     transition: none;
 }
@@ -48,9 +49,8 @@
     from { transform: rotate(0deg);}
     to { transform: rotate(360deg);}
 }
-.item__checkbox:checked + label:before {
-    background: transparent url("done.png") no-repeat 50% 50%;
-    animation: none;
+.item__text{
+    margin: 0 0 0 30px;
 }
 .item:before{
     content: '';
@@ -63,21 +63,6 @@
     letter-spacing: 0;
     position: absolute;
     left: -100px;
-}
-.item_wait{
-    opacity: 0.5;
-}
-.item_process{
-    color: #FFFF00;
-}
-.item_process:before{
-    border: 1px solid #fff;
-    background-image: url("mini_circle.png");
-    background-repeat: no-repeat;
-    background-position: 50% 50%;
-}
-.item_done:before{
-    border: 1px solid;
 }
 .item:after {
     content: '';
@@ -92,6 +77,15 @@
 }
 .item:last-child:after{
     content: none;
+}
+.item_process:before{
+    border: 1px solid;
+    background-image: url("img/mini_circle.png");
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+}
+.item_done:before{
+    border: 1px solid;
 }
 .item_done:after{
     border-right: 1px solid #fff;
