@@ -1,5 +1,5 @@
 .page{
-    width: 70%;
+    width: 60%;
     background: linear-gradient(to top left, purple, #7B68EE);
     font-family: 'Titillium Web', sans-serif;
     font-weight: bold;
@@ -8,7 +8,7 @@
     padding: 35px;
     font-size: 18px;
 }
-.wrap{
+.item-list{
     width: 100%;
     display: flex;
     flex-wrap: wrap;
@@ -29,28 +29,31 @@
 .item_process{
     color: #FFFF00;
 }
-.item__img{
+.item__text:before{
+    content: '';
     width: 30px;
     height: 30px;
     border-radius: 50%;
+    position: absolute;
+    left: 0;
 }
-.item__img_wait{
-    background: transparent url("img/watch.png") no-repeat 50% 50%;
+.item_done .item__text:before{
+    background: url("img/done.png") no-repeat 50% 50%;
 }
-.item__img_done{
-    background: transparent url("img/done.png") no-repeat 50% 50%;
+.item_wait .item__text:before{
+    background: url("img/watch.png") no-repeat 50% 50%;
 }
-.item__img_process{
-    background: transparent url("img/re-fresh.png") no-repeat 40% 50%;
+.item_process .item__text:before{
+    background: url("img/re-fresh.png") no-repeat 40% 50%;
     animation: spin 2s linear infinite;
     transition: none;
+}
+.item__text{
+    margin: 0 0 0 50px;
 }
 @keyframes spin {
     from { transform: rotate(0deg);}
     to { transform: rotate(360deg);}
-}
-.item__text{
-    margin: 0 0 0 30px;
 }
 .item:before{
     content: '';
